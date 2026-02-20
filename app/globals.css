@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply font-primary bg-primary text-white leading-loose;
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -21,8 +27,6 @@
     text-wrap: balance;
   }
 }
-
-
 
 @layer base {
   :root {
