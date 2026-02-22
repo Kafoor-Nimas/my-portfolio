@@ -2,8 +2,11 @@ import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 // Components
-import Header from "@/components/Header";
+
+
+
 import PageTransition from "@/components/PageTransition";
+import Header from "@/components/Header";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],

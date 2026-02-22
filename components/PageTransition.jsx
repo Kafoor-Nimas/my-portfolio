@@ -1,10 +1,27 @@
-import { AnimatePresence } from 'framer-motion'
-import React from 'react'
+"use client";
 
-const PageTransition = ({children}) => {
+import { AnimatePresence, motion } from "framer-motion";
+import { usePathname } from "next/navigation";
+
+const PageTransition = ({ children }) => {
+  const pathname = usePathname();
   return (
-    <AnimatePresence>PageTransition</AnimatePresence>
-  )
-}
+    <AnimatePresence>
+      <div key={pathname}>
+        <motion.div
+          initial={{ opacity: 1 }}
+          animate={{
+            opacity: 0,
+            transition: { delay: 1, duration: 0.4, ease: "easeInOut" },
+          }}
+          className="h-screen w-screen bg-primary fixed top-0
+          pointer-events-none"
+        />
 
-export default PageTransition
+        {children}
+      </div>
+    </AnimatePresence>
+  );
+};
+
+export default PageTransition;
