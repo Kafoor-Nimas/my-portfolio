@@ -10,20 +10,20 @@ const buttonVariants = cva(
       variant: {
         default: "bg-accent text-primary hover:bg-accent-hover",
         primary: "bg-primary text-white",
-        outline: "border border-accent bg-transparent text-accent hover:bg-accent hover:text-primary",
+        outline:
+          "border border-accent bg-transparent text-accent hover:bg-accent hover:text-primary",
       },
       size: {
         default: "h-[44px] px-6",
         md: "h-[48px] px-6",
         lg: "h-[56px] px-8 text-sm uppercase tracking-[2px]",
-        icon: "h-9 w-9",
       },
     },
     defaultVariants: {
       variant: "default",
       size: "default",
     },
-  }
+  },
 );
 
 const Button = React.forwardRef(
@@ -36,7 +36,7 @@ const Button = React.forwardRef(
         {...props}
       />
     );
-  }
+  },
 );
 Button.displayName = "Button";
 
