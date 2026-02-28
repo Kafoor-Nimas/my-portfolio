@@ -220,12 +220,12 @@ const Resume = () => {
           <div className="min-h-[70vh] w-full">
             {/* experience */}
             <TabsContent value="experience">experience</TabsContent>
-            education
+            {/* education */}
             <TabsContent value="education">education</TabsContent>
             {/* skills */}
             <TabsContent value="skills">skills</TabsContent>
             {/* about me */}
-            <TabsContent value="about">about me</TabsContent>
+            <TabsContent value="about">about</TabsContent>
           </div>
         </Tabs>
       </div>
