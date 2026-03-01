@@ -27,7 +27,7 @@ import {
 const about = {
   title: "About me",
   description:
-    "I'm passionate about web development and design, with a strong focus on creating user-friendly and visually appealing websites. I ",
+    "I'm a passionate Fullstack Developer and a BICT undergraduate at the University of Kelaniya. I specialize in the MERN stack and I'm currently expanding my skills in Next.js and TypeScript. I'm actively looking for an internship opportunity to grow and contribute.",
   info: [
     {
       fieldName: "Name",
@@ -37,14 +37,14 @@ const about = {
       fieldName: "Phone",
       fieldValue: "(+94) 778945679",
     },
-    {
-      fieldName: "Experience",
-      fieldValue: "12+ Years",
-    },
-    {
-      fieldName: "Skype",
-      fieldValue: "nimas.01",
-    },
+    // {
+    //   fieldName: "Experience",
+    //   fieldValue: "12+ Years",
+    // },
+    // {
+    //   fieldName: "Skype",
+    //   fieldValue: "nimas.01",
+    // },
     {
       fieldName: "Nationality",
       fieldValue: "Sri Lankan",
@@ -53,6 +53,15 @@ const about = {
       fieldName: "Email",
       fieldValue: "nimaskafoor@gmail.com",
     },
+    {
+      fieldName: "University",
+      fieldValue: "University of Kelaniya",
+    },
+    {
+      fieldName: "Degree",
+      fieldValue: "BICT (Undergraduate)",
+    },
+
     {
       fieldName: "Freelance",
       fieldValue: "Available",
@@ -69,38 +78,38 @@ const experience = {
   icon: "/assets/resume/badge.svg",
   title: "My Experience",
   description:
-    "I have over 12 years of experience in web development, specializing in front-end technologies and design.",
+    "I'm a fresher actively seeking my first internship. While I don't have formal work experience yet, I have built several personal projects using the MERN stack, Next.js, and TypeScript.",
   items: [
     {
-      company: "Tech Solutions Inc.",
-      position: "Full Stack Developer",
-      duration: "2022 - Present",
+      company: "Personal Projects",
+      position: "Fullstack Developer",
+      duration: "2023 - Present",
     },
     {
-      company: "Web Design Studio",
-      position: "Front-End Developer Intern",
-      duration: "Summer 2021",
+      company: "Great Stack",
+      position: "Self-taught — MERN Stack",
+      duration: "2025",
     },
     {
-      company: "E-commerce Startup",
-      position: "Freelance Web Developer",
-      duration: "2020 - 2021",
+      company: "JS Mastery",
+      position: "Self-taught — React & Next.js",
+      duration: "2024",
     },
     {
-      company: "Tech Academy",
-      position: "Teaching Assistant",
-      duration: "2019 - 2020",
+      company: "freeCodeCamp",
+      position: "Self-taught — Web Development",
+      duration: "2022 - 2024",
     },
-    {
-      company: "Digital Agency",
-      position: "UI/UX Designer",
-      duration: "2018 -2019",
-    },
-    {
-      company: "Software Development Firm",
-      position: "Junior Developer",
-      duration: "2017 - 2018",
-    },
+    // {
+    //   company: "Digital Agency",
+    //   position: "UI/UX Designer",
+    //   duration: "2018 -2019",
+    // },
+    // {
+    //   company: "Software Development Firm",
+    //   position: "Junior Developer",
+    //   duration: "2017 - 2018",
+    // },
   ],
 };
 
@@ -109,37 +118,37 @@ const education = {
   icon: "/assets/resume/cap.svg",
   title: "My education",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi officiis corrupti quae.",
+    "Currently pursuing a Bachelor of Information Communication Technology at the University of Kelaniya, while continuously learning through reputable online platforms.",
   items: [
     {
-      institution: "Online Course Platform",
-      degree: "Full Stack Web Development Bootcamp",
-      duration: "2023",
+      institution: "University of Kelaniya",
+      degree: "BICT (Undergraduate)",
+      duration: "2023 - Present",
     },
     {
-      institution: "Codecademy",
-      degree: "Front-end Track",
-      duration: "2022",
+      institution: "Great Stack (YouTube)",
+      degree: "MERN Stack Development",
+      duration: "2025",
     },
     {
-      institution: "Online Course",
-      degree: "Programming Course",
-      duration: "2020-2021",
+      institution: "JS Mastery (YouTube)",
+      degree: "React & Next.js Development",
+      duration: "2024",
     },
     {
-      institution: "Tech Institute",
-      degree: "Certified Web Developer",
-      duration: "2019",
+      institution: "freeCodeCamp",
+      degree: "Responsive Web Design & JavaScript",
+      duration: "2022 - 2024",
     },
     {
-      institution: "Design School",
-      degree: "Diploma in Graphic Design",
-      duration: "2016 - 2018",
+      institution: "Polonnaruwa Muslim National College",
+      degree: "G.C.E. Advanced Level (A/L)",
+      duration: "2019 - 2021",
     },
     {
-      institution: "Community Collage",
-      degree: "Associate Degree in Computer Science",
-      duration: "2014 - 2016",
+      institution: "Polonnaruwa Almina Muslim Kanista Vidyalaya",
+      degree: "G.C.E. Ordinary Level (O/L) — Grade 1 to 11",
+      duration: "2008 - 2019",
     },
   ],
 };
@@ -148,7 +157,7 @@ const education = {
 const skills = {
   title: "My skills",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi officiis corrupti quae.",
+    "Technologies and tools I use to build full-stack web applications and modern user interfaces.",
   skillList: [
     {
       icon: <FaHtml5 />,
@@ -175,6 +184,10 @@ const skills = {
       name: "tailwind css",
     },
     {
+      icon: <SiTypescript />,
+      name: "TypeScript",
+    },
+    {
       icon: <FaNodeJs />,
       name: "node.js",
     },
@@ -193,10 +206,6 @@ const skills = {
     {
       icon: <SiPostgresql />,
       name: "PostgreSQL",
-    },
-    {
-      icon: <SiTypescript />,
-      name: "TypeScript",
     },
     {
       icon: <SiGithub />,
