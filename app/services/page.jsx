@@ -6,30 +6,30 @@ import Link from "next/link";
 const services = [
   {
     num: "01",
-    title: "Web Development",
+    title: "Fullstack Web Development",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora earum.",
+      "Building complete web applications from frontend to backend using React, Next.js, Node.js, and Express.js — delivering fast, scalable, and production-ready solutions.",
     href: "",
   },
   {
     num: "02",
-    title: "UI/UX Design",
+    title: "Frontend Development",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora earum.",
+      "Crafting responsive, modern, and visually appealing user interfaces using React, Next.js, and Tailwind CSS with a focus on performance and great user experience.",
     href: "",
   },
   {
     num: "03",
-    title: "Logo Design",
+    title: "Backend & API Development",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora earum.",
+      "Designing and building robust REST APIs using Node.js and Express.js, with database integration using MongoDB, Mongoose, and PostgreSQL.",
     href: "",
   },
   {
     num: "04",
-    title: "SEO Optimization",
+    title: "Database Design & Management",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora earum.",
+      "Structuring and managing both SQL and NoSQL databases using PostgreSQL and MongoDB to ensure efficient, reliable, and scalable data storage.",
     href: "",
   },
 ];

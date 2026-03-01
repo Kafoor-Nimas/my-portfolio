@@ -13,14 +13,14 @@ const Home = () => {
           <div className="text-center xl:text-left order-2 xl:order-none">
             <span className="text-xl">MERN Full-Stack Developer</span>
             <h1 className="h1 mb-6">
-              Hello, I&apos;m <br />
+              Hello I'm <br />
               <span className="text-accent">Nimas</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
-              I&apos;m a passionate Fullstack Developer specializing in the
-              MERN stack, currently expanding my expertise in Next.js and
-              TypeScript. I love building fast, scalable, and user-friendly
-              web applications from frontend to backend.
+              I'm a passionate Fullstack Developer specializing in the MERN
+              stack, currently expanding my expertise in Next.js and TypeScript.
+              I love building fast, scalable, and user-friendly web applications
+              from frontend to backend.
             </p>
             {/* btn and socials*/}
             <div className="flex flex-col xl:flex-row items-center gap-8">
