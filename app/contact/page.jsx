@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/select";
 
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const info = [
   {
@@ -30,11 +31,9 @@ const info = [
   {
     icon: <FaMapMarkerAlt />,
     title: "Address",
-    description: "129/5 Manikkampitiya,Kaduruwela,Polonnaruwa",
+    description: "129/5 Manikkampitiya, Kaduruwela, Polonnaruwa",
   },
 ];
-
-import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
@@ -53,15 +52,16 @@ const Contact = () => {
             <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
               <h3 className="text-4xl text-accent">Let's work together</h3>
               <p className="text-white/60">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit
-                illum nesciunt recusandae vero, reprehenderit cumque!
+                I'm currently open to internship opportunities and freelance
+                projects. Whether you have a question, a project idea, or just
+                want to say hi — my inbox is always open!
               </p>
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="firstname" placeholder="Firstname" />
-                <Input type="lastname" placeholder="Lastname" />
+                <Input type="text" placeholder="Firstname" />
+                <Input type="text" placeholder="Lastname" />
                 <Input type="email" placeholder="Email address" />
-                <Input type="phone" placeholder="Phone number" />
+                <Input type="tel" placeholder="Phone number" />
               </div>
               {/* select */}
               <Select>
@@ -71,9 +71,18 @@ const Contact = () => {
                 <SelectContent>
                   <SelectGroup>
                     <SelectLabel>Select a service</SelectLabel>
-                    <SelectItem value="est">Web Development</SelectItem>
-                    <SelectItem value="cst">UI/UX Design</SelectItem>
-                    <SelectItem value="est">Logo Design</SelectItem>
+                    <SelectItem value="fullstack">
+                      Fullstack Web Development
+                    </SelectItem>
+                    <SelectItem value="frontend">
+                      Frontend Development
+                    </SelectItem>
+                    <SelectItem value="backend">
+                      Backend & API Development
+                    </SelectItem>
+                    <SelectItem value="database">
+                      Database Design & Management
+                    </SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
