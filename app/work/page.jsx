@@ -100,6 +100,28 @@ const projects = [
     live: "https://book-store-frontend-inky-iota.vercel.app",
     githubLink: "https://github.com/Kafoor-Nimas/book-store-mern-project",
   },
+  {
+    num: "06",
+    category: "frontend",
+    title: "Awwwards — GSAP Animated Website",
+    description:
+      "An Awwwards Site of the Day inspired website built with React and GSAP. Features advanced scroll animations, clip-path effects, ScrollTrigger, pinned elements, text reveal animations, and fully responsive design.",
+    stack: [{ name: "React.js" }, { name: "GSAP" }, { name: "Tailwind CSS" }],
+    image: "/assets/work/gsap.png",
+    live: "https://gsap-awwwards-website-alpha.vercel.app",
+    githubLink: "https://github.com/Kafoor-Nimas/gsap-awwwards-website",
+  },
+  {
+    num: "07",
+    category: "frontend",
+    title: "Edusity — College & University Website",
+    description:
+      "A modern, fully responsive College & University website built with React.js and CSS. Features Home, Program, About, Campus, Testimonials, and Contact pages.",
+    stack: [{ name: "React.js" }, { name: "CSS" }],
+    image: "/assets/work/edusity.png",
+    live: "https://edusity-seven-phi.vercel.app/",
+    githubLink: "https://github.com/Kafoor-Nimas/edusity",
+  },
 ];
 
 const Work = () => {
