@@ -107,7 +107,7 @@ const projects = [
     description:
       "An Awwwards Site of the Day inspired website built with React and GSAP. Features advanced scroll animations, clip-path effects, ScrollTrigger, pinned elements, text reveal animations, and fully responsive design.",
     stack: [{ name: "React.js" }, { name: "GSAP" }, { name: "Tailwind CSS" }],
-    image: "/assets/work/gsap.png",
+    image: "/assets/work/gsap3.png",
     live: "https://gsap-awwwards-website-alpha.vercel.app",
     githubLink: "https://github.com/Kafoor-Nimas/gsap-awwwards-website",
   },
@@ -118,7 +118,7 @@ const projects = [
     description:
       "A modern, fully responsive College & University website built with React.js and CSS. Features Home, Program, About, Campus, Testimonials, and Contact pages.",
     stack: [{ name: "React.js" }, { name: "CSS" }],
-    image: "/assets/work/edusity.png",
+    image: "/assets/work/edusity3.png",
     live: "https://edusity-seven-phi.vercel.app/",
     githubLink: "https://github.com/Kafoor-Nimas/edusity",
   },
