@@ -54,14 +54,51 @@ const projects = [
   },
   {
     num: "03",
-    category: "frontend",
-    title: "project 3",
+    category: "fullstack",
+    title: "Dev Events",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, voluptate.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind" }],
-    image: "/assets/work/thumb3.png",
-    live: "",
-    githubLink: "https://github.com/Kafoor-Nimas",
+      "A full-stack event management platform built with Next.js and TypeScript. Features dynamic event discovery, full CRUD operations, Cloudinary image management, server-side rendering, and integrated PostHog analytics.",
+    stack: [
+      { name: "Next.js" },
+      { name: "TypeScript" },
+      { name: "Tailwind" },
+      { name: "MongoDB" },
+    ],
+    image: "/assets/work/dev-events.png",
+    live: "https://dev-events-navy-omega.vercel.app/",
+    githubLink: "https://github.com/Kafoor-Nimas/Dev_Events",
+  },
+  {
+    num: "04",
+    category: "fullstack",
+    title: "Car Rental — Vehicle Booking Platform",
+    description:
+      "A full-stack car rental platform where users can browse, search, and book vehicles. Features JWT auth, bcrypt security, Cloudinary image management, real-time availability, and smooth animations with Framer Motion.",
+    stack: [
+      { name: "React" },
+      { name: "Tailwind" },
+      { name: "Framer-Motion" },
+      { name: "Express" },
+    ],
+    image: "/assets/work/car-rent.png",
+    live: "https://car-rental-psi-one.vercel.app/cars",
+    githubLink: "https://github.com/Kafoor-Nimas/CarRental",
+  },
+  {
+    num: "05",
+    category: "fullstack",
+    title: "BookStore — Full-Stack Bookstore App",
+    description:
+      "A full-stack MERN bookstore with JWT auth, Firebase authentication, Redux Toolkit state management, full CRUD book management, protected admin routes, and a responsive UI built with Tailwind CSS.",
+    stack: [
+      { name: "React.js" },
+      { name: "Tailwind" },
+      { name: "Express.js" },
+      { name: "Firebase" },
+    ],
+    image: "/assets/work/book-store.png",
+    live: "https://book-store-frontend-inky-iota.vercel.app",
+    githubLink: "https://github.com/Kafoor-Nimas/book-store-mern-project",
   },
 ];
 
