@@ -22,30 +22,35 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 const projects = [
   {
     num: "01",
-    category: "frontend",
-    title: "project 1",
+    category: "fullstack",
+    title: "Grocery Delivery App",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, voluptate.",
+      "A full-stack grocery delivery app with JWT auth, real-time cart, Stripe payments, Cloudinary image uploads, order management, and an admin panel — built with the MERN stack.",
     stack: [
-      { name: "Html 5" },
-      { name: "Css 3" },
-      { name: "Javascript" },
-      { name: "React js" },
+      { name: "React.js" },
+      { name: "Tailwind" },
+      { name: "Express.js" },
+      { name: "MongoDB" },
     ],
-    image: "/assets/work/thumb1.png",
-    live: "",
-    githubLink: "https://github.com/Kafoor-Nimas",
+    image: "/assets/work/greencart2.png",
+    live: "https://grocerydelivery-zeta.vercel.app",
+    githubLink: "https://github.com/Kafoor-Nimas/Grocery-Delivery",
   },
   {
     num: "02",
     category: "fullstack",
-    title: "project 2",
+    title: "Nimas Estate — Real Estate Marketplace",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, voluptate.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind.css" }, { name: "Node.js" }],
-    image: "/assets/work/thumb2.png",
-    live: "",
-    githubLink: "https://github.com/Kafoor-Nimas",
+      "A full-stack real estate marketplace where users can list, browse, and manage properties for sale or rent. Features JWT auth, Google OAuth via Firebase, Redux Toolkit state management, Cloudinary image uploads, and advanced search & filter.",
+    stack: [
+      { name: "React.js" },
+      { name: "Tailwind" },
+      { name: "Express.js" },
+      { name: "MongoDB" },
+    ],
+    image: "/assets/work/nimas-estate2.png",
+    live: "https://github.com/Kafoor-Nimas/mern-estate",
+    githubLink: "https://github.com/Kafoor-Nimas/mern-estate",
   },
   {
     num: "03",
@@ -111,7 +116,11 @@ const Work = () => {
               {/* buttons */}
               <div className="flex items-center gap-4">
                 {/* live project button */}
-                <Link href={project.live}>
+                <Link
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
@@ -124,7 +133,11 @@ const Work = () => {
                   </TooltipProvider>
                 </Link>
                 {/* github project button */}
-                <Link href={project.githubLink}>
+                <Link
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
