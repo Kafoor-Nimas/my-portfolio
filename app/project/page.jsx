@@ -39,6 +39,22 @@ const projects = [
   {
     num: "02",
     category: "fullstack",
+    title: "Servd — AI Recipe Platform",
+    description:
+      "An AI-powered recipe platform with pantry scanning using Google Gemini AI, recipe generation, PDF export, pro tier subscription, Clerk authentication, Arcjet rate limiting, and a Strapi CMS backend.",
+    stack: [
+      { name: "Next.js" },
+      { name: "Strapi" },
+      { name: "PostgreSQL" },
+      { name: "Gemini AI" },
+    ],
+    image: "/assets/work/servd.png",
+    live: "https://ai-recipe-servd.vercel.app",
+    githubLink: "https://github.com/Kafoor-Nimas/AI-Recipe",
+  },
+  {
+    num: "03",
+    category: "fullstack",
     title: "Nimas Estate — Real Estate Marketplace",
     description:
       "A full-stack real estate marketplace where users can list, browse, and manage properties for sale or rent. Features JWT auth, Google OAuth via Firebase, Redux Toolkit state management, Cloudinary image uploads, and advanced search & filter.",
@@ -52,22 +68,7 @@ const projects = [
     live: "https://github.com/Kafoor-Nimas/mern-estate",
     githubLink: "https://github.com/Kafoor-Nimas/mern-estate",
   },
-  {
-    num: "03",
-    category: "fullstack",
-    title: "Dev Events",
-    description:
-      "A full-stack event management platform built with Next.js and TypeScript. Features dynamic event discovery, full CRUD operations, Cloudinary image management, server-side rendering, and integrated PostHog analytics.",
-    stack: [
-      { name: "Next.js" },
-      { name: "TypeScript" },
-      { name: "Tailwind" },
-      { name: "MongoDB" },
-    ],
-    image: "/assets/work/dev-events.png",
-    live: "https://dev-events-navy-omega.vercel.app/",
-    githubLink: "https://github.com/Kafoor-Nimas/Dev_Events",
-  },
+
   {
     num: "04",
     category: "fullstack",
@@ -113,6 +114,22 @@ const projects = [
   },
   {
     num: "07",
+    category: "fullstack",
+    title: "Dev Events",
+    description:
+      "A full-stack event management platform built with Next.js and TypeScript. Features dynamic event discovery, full CRUD operations, Cloudinary image management, server-side rendering, and integrated PostHog analytics.",
+    stack: [
+      { name: "Next.js" },
+      { name: "TypeScript" },
+      { name: "Tailwind" },
+      { name: "MongoDB" },
+    ],
+    image: "/assets/work/dev-events.png",
+    live: "https://dev-events-navy-omega.vercel.app/",
+    githubLink: "https://github.com/Kafoor-Nimas/Dev_Events",
+  },
+  {
+    num: "08",
     category: "frontend",
     title: "Edusity — College & University Website",
     description:
