@@ -8,7 +8,7 @@ const states = [
     text: "Years of learning",
   },
   {
-    num: 7,
+    num: 8,
     text: "Projects completed",
   },
   {
@@ -16,7 +16,7 @@ const states = [
     text: "Technologies mastered",
   },
   {
-    num: 1131,
+    num: 1289,
     text: "Code commits",
   },
 ];
