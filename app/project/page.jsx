@@ -55,6 +55,22 @@ const projects = [
   {
     num: "03",
     category: "fullstack",
+    title: "E-Commerce — Full-Stack Shopping Platform",
+    description:
+      "A production-ready full-stack e-commerce platform with JWT auth, product management, cart, Stripe & COD payments, order tracking, and a dedicated admin panel for managing products and orders.",
+    stack: [
+      { name: "React.js" },
+      { name: "Node.js" },
+      { name: "MongoDB" },
+      { name: "Stripe" },
+    ],
+    image: "/assets/work/ecommerce.png",
+    live: "https://ecommerce-frontend-topaz-kappa.vercel.app",
+    githubLink: "https://github.com/Kafoor-Nimas/ecommerce-app",
+  },
+  {
+    num: "04",
+    category: "fullstack",
     title: "Nimas Estate — Real Estate Marketplace",
     description:
       "A full-stack real estate marketplace where users can list, browse, and manage properties for sale or rent. Features JWT auth, Google OAuth via Firebase, Redux Toolkit state management, Cloudinary image uploads, and advanced search & filter.",
@@ -70,7 +86,7 @@ const projects = [
   },
 
   {
-    num: "04",
+    num: "05",
     category: "fullstack",
     title: "Car Rental — Vehicle Booking Platform",
     description:
@@ -86,7 +102,7 @@ const projects = [
     githubLink: "https://github.com/Kafoor-Nimas/CarRental",
   },
   {
-    num: "05",
+    num: "06",
     category: "fullstack",
     title: "BookStore — Full-Stack Bookstore App",
     description:
@@ -102,7 +118,7 @@ const projects = [
     githubLink: "https://github.com/Kafoor-Nimas/book-store-mern-project",
   },
   {
-    num: "06",
+    num: "07",
     category: "frontend",
     title: "Awwwards — GSAP Animated Website",
     description:
@@ -113,7 +129,7 @@ const projects = [
     githubLink: "https://github.com/Kafoor-Nimas/gsap-awwwards-website",
   },
   {
-    num: "07",
+    num: "08",
     category: "fullstack",
     title: "Dev Events",
     description:
@@ -129,7 +145,7 @@ const projects = [
     githubLink: "https://github.com/Kafoor-Nimas/Dev_Events",
   },
   {
-    num: "08",
+    num: "09",
     category: "frontend",
     title: "Edusity — College & University Website",
     description:
@@ -238,7 +254,10 @@ const Work = () => {
               {projects.map((project, index) => {
                 return (
                   <SwiperSlide key={index} className="w-full">
-                    <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
+                    <div
+                      className="h-[460px] relative group flex justify-center items-center bg-pink-50/20 cursor-pointer"
+                      onClick={() => window.open(project.live, "_blank")}
+                    >
                       {/* overlay */}
                       <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
                       {/* image */}

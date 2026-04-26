@@ -16,7 +16,7 @@ const states = [
     text: "Technologies mastered",
   },
   {
-    num: 1289,
+    num: 1474,
     text: "Code commits",
   },
 ];
