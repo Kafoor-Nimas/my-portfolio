@@ -71,6 +71,22 @@ const projects = [
   {
     num: "04",
     category: "fullstack",
+    title: "SnapCut — Barbershop Booking Platform",
+    description:
+      "A full-stack barbershop appointment booking platform for Sri Lanka. Customers can browse barbers, book appointments, and manage bookings. Admins can manage barbers and appointments through a dedicated dashboard.",
+    stack: [
+      { name: "React.js" },
+      { name: "Node.js" },
+      { name: "MongoDB" },
+      { name: "Cloudinary" },
+    ],
+    image: "/assets/work/snapcut.png",
+    live: "https://snap-cut-frontend.vercel.app",
+    githubLink: "https://github.com/Kafoor-Nimas/SnapCut",
+  },
+  {
+    num: "05",
+    category: "fullstack",
     title: "Nimas Estate — Real Estate Marketplace",
     description:
       "A full-stack real estate marketplace where users can list, browse, and manage properties for sale or rent. Features JWT auth, Google OAuth via Firebase, Redux Toolkit state management, Cloudinary image uploads, and advanced search & filter.",
@@ -84,9 +100,8 @@ const projects = [
     live: "https://github.com/Kafoor-Nimas/mern-estate",
     githubLink: "https://github.com/Kafoor-Nimas/mern-estate",
   },
-
   {
-    num: "05",
+    num: "06",
     category: "fullstack",
     title: "Car Rental — Vehicle Booking Platform",
     description:
@@ -102,7 +117,7 @@ const projects = [
     githubLink: "https://github.com/Kafoor-Nimas/CarRental",
   },
   {
-    num: "06",
+    num: "07",
     category: "fullstack",
     title: "BookStore — Full-Stack Bookstore App",
     description:
@@ -118,7 +133,7 @@ const projects = [
     githubLink: "https://github.com/Kafoor-Nimas/book-store-mern-project",
   },
   {
-    num: "07",
+    num: "08",
     category: "frontend",
     title: "Awwwards — GSAP Animated Website",
     description:
@@ -129,7 +144,7 @@ const projects = [
     githubLink: "https://github.com/Kafoor-Nimas/gsap-awwwards-website",
   },
   {
-    num: "08",
+    num: "09",
     category: "fullstack",
     title: "Dev Events",
     description:
@@ -145,7 +160,7 @@ const projects = [
     githubLink: "https://github.com/Kafoor-Nimas/Dev_Events",
   },
   {
-    num: "09",
+    num: "10",
     category: "frontend",
     title: "Edusity — College & University Website",
     description:
