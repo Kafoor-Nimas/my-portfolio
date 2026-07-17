@@ -23,6 +23,23 @@ const projects = [
   {
     num: "01",
     category: "fullstack",
+    title: "Online Food Ordering System",
+    description:
+      "A MERN-stack e-commerce platform for online food ordering, featuring real-time menu search, JWT-secured authentication, order tracking, and a full admin dashboard for product/order management.",
+    stack: [
+      { name: "React.js" },
+      { name: "Node.js" },
+      { name: "Express.js" },
+      { name: "MongoDB" },
+    ],
+    image: "/assets/work/foodOrder.png",
+    live: "https://online-food-ordering-wheat-mu.vercel.app",
+    githubLink:
+      "https://github.com/Kafoor-Nimas/Online-Food-Ordering-System.git",
+  },
+  {
+    num: "02",
+    category: "fullstack",
     title: "Instacart — Grocery Delivery App (PERN)",
     description:
       "A full-stack grocery delivery platform built with the PERN stack (PostgreSQL, Express, React, Node.js) featuring customer ordering, an admin panel, and a delivery partner dashboard.",
@@ -37,7 +54,7 @@ const projects = [
     githubLink: "https://github.com/Kafoor-Nimas/Instacart",
   },
   {
-    num: "02",
+    num: "03",
     category: "fullstack",
     title: "Servd — AI Recipe Platform",
     description:
@@ -53,7 +70,7 @@ const projects = [
     githubLink: "https://github.com/Kafoor-Nimas/AI-Recipe",
   },
   {
-    num: "03",
+    num: "04",
     category: "fullstack",
     title: "E-Commerce — Full-Stack Shopping Platform",
     description:
@@ -69,7 +86,7 @@ const projects = [
     githubLink: "https://github.com/Kafoor-Nimas/ecommerce-app",
   },
   {
-    num: "04",
+    num: "05",
     category: "fullstack",
     title: "SnapCut — Barbershop Booking Platform",
     description:
@@ -85,7 +102,7 @@ const projects = [
     githubLink: "https://github.com/Kafoor-Nimas/SnapCut",
   },
   {
-    num: "05",
+    num: "06",
     category: "fullstack",
     title: "Grocery Delivery App",
     description:
@@ -101,7 +118,7 @@ const projects = [
     githubLink: "https://github.com/Kafoor-Nimas/Grocery-Delivery",
   },
   {
-    num: "06",
+    num: "07",
     category: "fullstack",
     title: "Nimas Estate — Real Estate Marketplace",
     description:
@@ -117,7 +134,7 @@ const projects = [
     githubLink: "https://github.com/Kafoor-Nimas/mern-estate",
   },
   {
-    num: "07",
+    num: "08",
     category: "fullstack",
     title: "Car Rental — Vehicle Booking Platform",
     description:
@@ -133,7 +150,7 @@ const projects = [
     githubLink: "https://github.com/Kafoor-Nimas/CarRental",
   },
   {
-    num: "08",
+    num: "09",
     category: "fullstack",
     title: "BookStore — Full-Stack Bookstore App",
     description:
@@ -149,7 +166,7 @@ const projects = [
     githubLink: "https://github.com/Kafoor-Nimas/book-store-mern-project",
   },
   {
-    num: "09",
+    num: "10",
     category: "frontend",
     title: "Awwwards — GSAP Animated Website",
     description:
@@ -160,7 +177,7 @@ const projects = [
     githubLink: "https://github.com/Kafoor-Nimas/gsap-awwwards-website",
   },
   {
-    num: "10",
+    num: "11",
     category: "fullstack",
     title: "Dev Events",
     description:
@@ -176,7 +193,7 @@ const projects = [
     githubLink: "https://github.com/Kafoor-Nimas/Dev_Events",
   },
   {
-    num: "11",
+    num: "12",
     category: "frontend",
     title: "Edusity — College & University Website",
     description:
