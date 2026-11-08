@@ -1,80 +1,131 @@
 "use client";
 
-import { BsArrowDownRight } from "react-icons/bs";
+import { motion } from "framer-motion";
 import Link from "next/link";
+import { BsArrowUpRight } from "react-icons/bs";
+import { FaLayerGroup, FaDesktop, FaServer, FaDatabase } from "react-icons/fa";
+import TiltCard from "@/components/Tiltcard";
 
 const services = [
   {
     num: "01",
+    icon: <FaLayerGroup />,
     title: "Fullstack Web Development",
     description:
-      "Building complete web applications from frontend to backend using React, Next.js, Node.js, and Express.js — delivering fast, scalable, and production-ready solutions.",
-    href: "",
+      "Complete web applications from frontend to backend, fast, scalable and production-ready.",
+    tags: ["React", "Next.js", "Node.js", "Express"],
   },
   {
     num: "02",
+    icon: <FaDesktop />,
     title: "Frontend Development",
     description:
-      "Crafting responsive, modern, and visually appealing user interfaces using React, Next.js, and Tailwind CSS with a focus on performance and great user experience.",
-    href: "",
+      "Responsive, modern interfaces with smooth animations and a focus on performance and user experience.",
+    tags: ["React", "Next.js", "Tailwind", "Framer Motion"],
   },
   {
     num: "03",
+    icon: <FaServer />,
     title: "Backend & API Development",
     description:
-      "Designing and building robust REST APIs using Node.js and Express.js, with database integration using MongoDB, Mongoose, and PostgreSQL.",
-    href: "",
+      "Robust REST APIs with secure authentication and clean database integration.",
+    tags: ["Node.js", "Express", "JWT", "Mongoose"],
   },
   {
     num: "04",
+    icon: <FaDatabase />,
     title: "Database Design & Management",
     description:
-      "Structuring and managing both SQL and NoSQL databases using PostgreSQL and MongoDB to ensure efficient, reliable, and scalable data storage.",
-    href: "",
+      "Efficient, reliable and scalable data storage with both SQL and NoSQL databases.",
+    tags: ["MongoDB", "PostgreSQL"],
   },
 ];
 
-import { motion } from "framer-motion";
+const container = {
+  hidden: {},
+  show: { transition: { delayChildren: 2.4, staggerChildren: 0.15 } },
+};
+const item = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
+// Spotlight follows the cursor inside the card
+const trackMouse = (e) => {
+  const r = e.currentTarget.getBoundingClientRect();
+  e.currentTarget.style.setProperty("--x", `${e.clientX - r.left}px`);
+  e.currentTarget.style.setProperty("--y", `${e.clientY - r.top}px`);
+};
 
 const Services = () => {
   return (
     <section className="min-h-[80vh] flex flex-col justify-center py-12 xl:py-0">
       <div className="container mx-auto">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{
-            opacity: 1,
-            transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
-          }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-[60px]"
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 xl:gap-8"
         >
-          {services.map((service, index) => {
-            return (
-              <div
-                key={index}
-                className="flex flex-1 flex-col justify-center gap-6 group"
-              >
-                {/* top */}
-                <div className="w-full flex justify-between items-center">
-                  <div className="text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500">
-                    {service.num}
+          {services.map((s) => (
+            <motion.div key={s.num} variants={item}>
+              <TiltCard max={6} className="h-full">
+                <div
+                  onMouseMove={trackMouse}
+                  className="group relative h-full overflow-hidden rounded-2xl border border-white/10 bg-[#27272c]/70 p-8 xl:p-10 flex flex-col gap-5 transition-colors duration-500 hover:border-accent/50"
+                >
+                  {/* cursor spotlight */}
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    style={{
+                      background:
+                        "radial-gradient(320px circle at var(--x,50%) var(--y,50%), rgba(0,255,153,0.14), transparent 65%)",
+                    }}
+                  />
+
+                  {/* top row */}
+                  <div className="relative flex items-start justify-between">
+                    <div className="w-14 h-14 rounded-xl bg-accent/10 text-accent text-2xl flex items-center justify-center group-hover:bg-accent group-hover:text-primary transition-all duration-500">
+                      {s.icon}
+                    </div>
+                    <span className="text-5xl font-extrabold text-transparent text-outline group-hover:text-outline-hover transition-all duration-500">
+                      {s.num}
+                    </span>
                   </div>
+
+                  <h2 className="relative text-3xl xl:text-[34px] font-bold leading-tight text-white group-hover:text-accent transition-colors duration-500">
+                    {s.title}
+                  </h2>
+                  <p className="relative text-white/60">{s.description}</p>
+
+                  {/* tags */}
+                  <ul className="relative flex flex-wrap gap-2">
+                    {s.tags.map((t) => (
+                      <li
+                        key={t}
+                        className="px-3 py-1 rounded-full text-xs text-accent border border-accent/30 bg-accent/5"
+                      >
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* CTA */}
                   <Link
-                    href={service.href}
-                    className="w-[70px] h-[70px] rounded-full bg-white group-hover:bg-accent transition-all duration-500 flex justify-center items-center hover:-rotate-45"
+                    href="/contact"
+                    className="relative mt-auto inline-flex items-center gap-2 text-white/80 group-hover:text-accent transition-colors duration-500"
                   >
-                    <BsArrowDownRight className="text-primary text-3xl" />
+                    <span>Discuss this service</span>
+                    <BsArrowUpRight className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-500" />
                   </Link>
+
+                  {/* animated bottom line */}
+                  <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-accent group-hover:w-full transition-all duration-700" />
                 </div>
-                <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">
-                  {service.title}
-                </h2>
-                <p className="text-white/60">{service.description}</p>
-                {/* border */}
-                <div className="border-b border-white/20 w-full"></div>
-              </div>
-            );
-          })}
+              </TiltCard>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>

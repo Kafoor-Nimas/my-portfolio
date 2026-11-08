@@ -1,23 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+import { useMemo, useState } from "react";
 
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-
-import Link from "next/link";
 import Image from "next/image";
-import WorkSliderBtns from "@/components/WorkSliderBtns";
+import TiltCard from "@/components/Tiltcard";
 
 const projects = [
   {
@@ -130,7 +119,7 @@ const projects = [
       { name: "MongoDB" },
     ],
     image: "/assets/work/nimas-estate2.png",
-    live: "https://github.com/Kafoor-Nimas/mern-estate",
+    live: "https://github.com/Kafoor-Nimas/mern-estate", // TODO: replace with the deployed URL
     githubLink: "https://github.com/Kafoor-Nimas/mern-estate",
   },
   {
@@ -204,15 +193,39 @@ const projects = [
     githubLink: "https://github.com/Kafoor-Nimas/edusity",
   },
 ];
-const Work = () => {
-  const [project, setProject] = useState(projects[0]);
 
-  const handleSlideChange = (swiper) => {
-    // get current slide index
-    const currentIndex = swiper.activeIndex;
-    // update project state based on current slide index
-    setProject(projects[currentIndex]);
+const filters = ["all", "fullstack", "frontend"];
+
+const hostOf = (url) => {
+  try {
+    return new URL(url).hostname.replace("www.", "");
+  } catch {
+    return url;
+  }
+};
+
+const Work = () => {
+  const [filter, setFilter] = useState("all");
+  const [active, setActive] = useState(0);
+
+  const list = useMemo(
+    () =>
+      filter === "all"
+        ? projects
+        : projects.filter((p) => p.category === filter),
+    [filter],
+  );
+
+  const changeFilter = (f) => {
+    setFilter(f);
+    setActive(0);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  const goTo = (num) =>
+    document
+      .getElementById(`project-${num}`)
+      ?.scrollIntoView({ behavior: "smooth", block: "center" });
 
   return (
     <motion.section
@@ -221,112 +234,195 @@ const Work = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
+      className="py-12"
     >
-      {/* <div className="container mx-auto"> */}
+      {/* side dots: jump to a project and show where you are */}
+      <nav
+        aria-label="Project navigation"
+        className="hidden xl:flex fixed right-8 top-1/2 -translate-y-1/2 z-30 flex-col gap-3"
+      >
+        {list.map((p, i) => (
+          <button
+            key={p.num}
+            onClick={() => goTo(p.num)}
+            aria-label={`Go to ${p.title}`}
+            className="group relative flex items-center justify-end"
+          >
+            <span className="absolute right-6 whitespace-nowrap rounded-md bg-[#27272c] px-3 py-1 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+              {p.title}
+            </span>
+            <span
+              className={`block rounded-full transition-all duration-300 ${
+                i === active
+                  ? "w-3 h-3 bg-accent shadow-[0_0_12px_rgba(0,255,153,0.8)]"
+                  : "w-2 h-2 bg-white/30 group-hover:bg-accent/70"
+              }`}
+            />
+          </button>
+        ))}
+      </nav>
+
       <div className="container mx-auto px-4 xl:px-16">
-        <div className="flex flex-col xl:flex-row xl:gap-[30px]">
-          <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
-            <div className="flex flex-col gap-[30px] h-[50%]">
-              {/* outline num */}
-              <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
-                {project.num}
-              </div>
-              {/* project category */}
-              <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-                {project.category} project
-              </h2>
-              {/* project description */}
-              <p className="text-white/60">{project.description}</p>
-              {/* stack */}
-              <ul className="flex gap-4">
-                {project.stack.map((item, index) => {
-                  return (
-                    <li key={index} className="text-xl text-accent">
-                      {item.name}
-                      {/* To remove the last comma */}
-                      {index !== project.stack.length - 1 && ","}
-                    </li>
-                  );
-                })}
-              </ul>
-              {/* border */}
-              <div className="border border-white/20"></div>
-              {/* buttons */}
-              <div className="flex items-center gap-4">
-                {/* live project button */}
-                <Link
-                  href={project.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
+        {/* filter pills */}
+        <div className="flex flex-wrap justify-center xl:justify-start gap-3 mb-4">
+          {filters.map((f) => {
+            const count =
+              f === "all"
+                ? projects.length
+                : projects.filter((p) => p.category === f).length;
+            const on = filter === f;
+            return (
+              <button
+                key={f}
+                onClick={() => changeFilter(f)}
+                className={`px-5 py-2 rounded-full text-sm capitalize transition-all duration-300 border ${
+                  on
+                    ? "bg-accent text-primary border-accent"
+                    : "border-white/20 text-white/70 hover:border-accent hover:text-accent"
+                }`}
+              >
+                {f} <span className="opacity-60">({count})</span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* projects: scroll down to see the next one */}
+        <div key={filter} className="flex flex-col">
+          {list.map((p, index) => {
+            const live = p.live && p.live !== p.githubLink;
+            const flip = index % 2 === 1;
+            const first = index === 0;
+
+            return (
+              <motion.article
+                key={p.num}
+                id={`project-${p.num}`}
+                // marks the project crossing the middle of the screen as "current"
+                onViewportEnter={() => setActive(index)}
+                viewport={{ margin: "-50% 0px -50% 0px" }}
+                className="grid grid-cols-1 xl:grid-cols-2 gap-8 xl:gap-16 items-center py-12 xl:py-20 border-b border-white/10 last:border-b-0 scroll-mt-28"
+              >
+                {/* ---------- info ---------- */}
+                <motion.div
+                  initial={{ opacity: 0, x: flip ? 50 : -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.25 }}
+                  transition={{
+                    duration: 0.7,
+                    ease: "easeOut",
+                    delay: first ? 2.4 : 0.1,
+                  }}
+                  className={`flex flex-col gap-6 order-2 ${
+                    flip ? "xl:order-2" : "xl:order-1"
+                  }`}
                 >
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Live project</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
-                {/* github project button */}
-                <Link
-                  href={project.githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsGithub className="text-white text-3xl group-hover:text-accent" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Github repository</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="w-full xl:w-[50%]">
-            <Swiper
-              spaceBetween={30}
-              slidesPerView={1}
-              className="xl:h-[520px] mb-12"
-              onSlideChange={handleSlideChange}
-            >
-              {projects.map((project, index) => {
-                return (
-                  <SwiperSlide key={index} className="w-full">
-                    <div
-                      className="h-[460px] relative group flex justify-center items-center bg-pink-50/20 cursor-pointer"
-                      onClick={() => window.open(project.live, "_blank")}
+                  <div className="flex items-end justify-between">
+                    <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
+                      {p.num}
+                    </div>
+                    <span className="text-white/50 text-sm pb-2">
+                      {String(index + 1).padStart(2, "0")} /{" "}
+                      {String(list.length).padStart(2, "0")}
+                    </span>
+                  </div>
+
+                  <div className="flex flex-col gap-3">
+                    <span className="self-start px-3 py-1 rounded-full text-xs uppercase tracking-wider text-accent border border-accent/30 bg-accent/10">
+                      {p.category}
+                    </span>
+                    <h2 className="text-3xl xl:text-[38px] font-bold leading-tight text-white">
+                      {p.title}
+                    </h2>
+                  </div>
+
+                  <p className="text-white/60">{p.description}</p>
+
+                  <ul className="flex flex-wrap gap-2">
+                    {p.stack.map((item) => (
+                      <li
+                        key={item.name}
+                        className="px-3 py-1 rounded-full text-sm text-accent border border-accent/30 bg-accent/5"
+                      >
+                        {item.name}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="flex flex-wrap items-center gap-4">
+                    {live && (
+                      <a
+                        href={p.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent text-primary font-medium transition-all duration-300 hover:bg-accent-hover hover:shadow-[0_0_24px_rgba(0,255,153,0.35)]"
+                      >
+                        Live demo
+                        <BsArrowUpRight className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                      </a>
+                    )}
+                    <a
+                      href={p.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 text-white transition-all duration-300 hover:border-accent hover:text-accent"
                     >
-                      {/* overlay */}
-                      <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
-                      {/* image */}
-                      <div className="relative w-full h-full">
+                      <BsGithub className="text-lg" />
+                      GitHub
+                    </a>
+                  </div>
+                </motion.div>
+
+                {/* ---------- preview ---------- */}
+                <motion.div
+                  initial={{ opacity: 0, y: 70, scale: 0.94 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true, amount: 0.25 }}
+                  transition={{
+                    duration: 0.8,
+                    ease: "easeOut",
+                    delay: first ? 2.5 : 0.15,
+                  }}
+                  className={`order-1 ${flip ? "xl:order-1" : "xl:order-2"}`}
+                >
+                  <TiltCard max={5}>
+                    <div
+                      onClick={() => live && window.open(p.live, "_blank")}
+                      className={`group relative overflow-hidden rounded-xl border border-white/10 bg-[#1c1c22] shadow-2xl shadow-black/40 ${
+                        live ? "cursor-pointer" : ""
+                      }`}
+                    >
+                      <div className="h-10 flex items-center gap-2 px-4 bg-[#27272c] border-b border-white/10">
+                        <span className="w-3 h-3 rounded-full bg-red-400/80" />
+                        <span className="w-3 h-3 rounded-full bg-yellow-400/80" />
+                        <span className="w-3 h-3 rounded-full bg-green-400/80" />
+                        <span className="ml-4 flex-1 truncate rounded-md bg-black/30 px-3 py-1 text-xs text-white/50">
+                          {hostOf(live ? p.live : p.githubLink)}
+                        </span>
+                      </div>
+
+                      <div className="relative h-[240px] sm:h-[340px] xl:h-[400px]">
                         <Image
-                          src={project.image}
+                          src={p.image}
                           fill
-                          alt=""
-                          className="object-cover"
+                          alt={p.title}
+                          priority={index === 0}
+                          sizes="(min-width: 1280px) 50vw, 100vw"
+                          className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                         />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        {live && (
+                          <span className="absolute bottom-5 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 inline-flex items-center gap-2 px-5 py-2 rounded-full bg-accent text-primary text-sm font-medium">
+                            Visit live site <BsArrowUpRight />
+                          </span>
+                        )}
                       </div>
                     </div>
-                  </SwiperSlide>
-                );
-              })}
-              {/* slider buttons */}
-              <WorkSliderBtns
-                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
-                btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
-              />
-            </Swiper>
-          </div>
+                  </TiltCard>
+                </motion.div>
+              </motion.article>
+            );
+          })}
         </div>
       </div>
     </motion.section>

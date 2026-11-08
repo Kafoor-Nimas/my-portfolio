@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    experimental: {
+    optimizePackageImports: ["@react-three/drei", "react-icons"],
+  }
+};
 
 export default nextConfig;
 
