@@ -15,14 +15,14 @@ const Header = () => {
           </h1>
         </Link>
         {/* Desktop nav */}
-        <div className="hidden xl:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8">
           <Nav />
           <Link href={"/contact"}>
             <Button>Hire me</Button>
           </Link>
         </div>
         {/* Mobile nav */}
-        <div className="xl:hidden">
+        <div className="lg:hidden">
           <MobileNav />
         </div>
       </div>

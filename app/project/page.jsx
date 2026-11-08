@@ -234,7 +234,7 @@ const Work = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="py-12"
+      className="py-12 overflow-clip"
     >
       {/* side dots: jump to a project and show where you are */}
       <nav
