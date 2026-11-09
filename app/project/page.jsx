@@ -8,9 +8,8 @@ import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 import Image from "next/image";
 import TiltCard from "@/components/Tiltcard";
 
-const projects = [
+const rawProjects = [
   {
-    num: "01",
     category: "fullstack",
     title: "Online Food Ordering System",
     description:
@@ -27,7 +26,21 @@ const projects = [
       "https://github.com/Kafoor-Nimas/Online-Food-Ordering-System.git",
   },
   {
-    num: "02",
+    category: "fullstack",
+    title: "LifeLink — Emergency Blood Donation Platform",
+    description:
+      "A MERN-stack platform that connects volunteer blood donors with patients across Sri Lanka's 25 districts. Features emergency request management with urgency levels, donor search and filters, JWT authentication with role-based access, masked donor contact details, and an admin dashboard.",
+    stack: [
+      { name: "React.js" },
+      { name: "Tailwind" },
+      { name: "Express.js" },
+      { name: "MongoDB" },
+    ],
+    image: "/assets/work/lifelink2.jfif",
+    live: "https://blood-donation-app-frontend-azure.vercel.app",
+    githubLink: "https://github.com/Kafoor-Nimas/blood-donation-app.git",
+  },
+  {
     category: "fullstack",
     title: "Instacart — Grocery Delivery App (PERN)",
     description:
@@ -43,7 +56,6 @@ const projects = [
     githubLink: "https://github.com/Kafoor-Nimas/Instacart",
   },
   {
-    num: "03",
     category: "fullstack",
     title: "Servd — AI Recipe Platform",
     description:
@@ -59,7 +71,6 @@ const projects = [
     githubLink: "https://github.com/Kafoor-Nimas/AI-Recipe",
   },
   {
-    num: "04",
     category: "fullstack",
     title: "E-Commerce — Full-Stack Shopping Platform",
     description:
@@ -75,23 +86,6 @@ const projects = [
     githubLink: "https://github.com/Kafoor-Nimas/ecommerce-app",
   },
   {
-    num: "05",
-    category: "fullstack",
-    title: "SnapCut — Barbershop Booking Platform",
-    description:
-      "A full-stack barbershop appointment booking platform for Sri Lanka. Customers can browse barbers, book appointments, and manage bookings. Admins can manage barbers and appointments through a dedicated dashboard.",
-    stack: [
-      { name: "React.js" },
-      { name: "Node.js" },
-      { name: "MongoDB" },
-      { name: "Cloudinary" },
-    ],
-    image: "/assets/work/snapcut.png",
-    live: "https://snap-cut-frontend.vercel.app",
-    githubLink: "https://github.com/Kafoor-Nimas/SnapCut",
-  },
-  {
-    num: "06",
     category: "fullstack",
     title: "Grocery Delivery App",
     description:
@@ -102,12 +96,11 @@ const projects = [
       { name: "Express.js" },
       { name: "MongoDB" },
     ],
-    image: "/assets/work/greencart2.png",
+    image: "/assets/work/greencart2.jfif",
     live: "https://grocerydelivery-zeta.vercel.app",
     githubLink: "https://github.com/Kafoor-Nimas/Grocery-Delivery",
   },
   {
-    num: "07",
     category: "fullstack",
     title: "Nimas Estate — Real Estate Marketplace",
     description:
@@ -118,12 +111,11 @@ const projects = [
       { name: "Express.js" },
       { name: "MongoDB" },
     ],
-    image: "/assets/work/nimas-estate2.png",
+    image: "/assets/work/nimas-estate2.jfif",
     live: "https://github.com/Kafoor-Nimas/mern-estate", // TODO: replace with the deployed URL
     githubLink: "https://github.com/Kafoor-Nimas/mern-estate",
   },
   {
-    num: "08",
     category: "fullstack",
     title: "Car Rental — Vehicle Booking Platform",
     description:
@@ -134,65 +126,27 @@ const projects = [
       { name: "Framer-Motion" },
       { name: "Express" },
     ],
-    image: "/assets/work/car-rent.png",
+    image: "/assets/work/car-rent.jfif",
     live: "https://car-rental-psi-one.vercel.app/cars",
     githubLink: "https://github.com/Kafoor-Nimas/CarRental",
   },
   {
-    num: "09",
-    category: "fullstack",
-    title: "BookStore — Full-Stack Bookstore App",
-    description:
-      "A full-stack MERN bookstore with JWT auth, Firebase authentication, Redux Toolkit state management, full CRUD book management, protected admin routes, and a responsive UI built with Tailwind CSS.",
-    stack: [
-      { name: "React.js" },
-      { name: "Tailwind" },
-      { name: "Express.js" },
-      { name: "Firebase" },
-    ],
-    image: "/assets/work/book-store.png",
-    live: "https://book-store-frontend-inky-iota.vercel.app",
-    githubLink: "https://github.com/Kafoor-Nimas/book-store-mern-project",
-  },
-  {
-    num: "10",
     category: "frontend",
     title: "Awwwards — GSAP Animated Website",
     description:
       "An Awwwards Site of the Day inspired website built with React and GSAP. Features advanced scroll animations, clip-path effects, ScrollTrigger, pinned elements, text reveal animations, and fully responsive design.",
     stack: [{ name: "React.js" }, { name: "GSAP" }, { name: "Tailwind CSS" }],
-    image: "/assets/work/gsap3.png",
+    image: "/assets/work/gsap3.jfif",
     live: "https://gsap-awwwards-website-alpha.vercel.app",
     githubLink: "https://github.com/Kafoor-Nimas/gsap-awwwards-website",
   },
-  {
-    num: "11",
-    category: "fullstack",
-    title: "Dev Events",
-    description:
-      "A full-stack event management platform built with Next.js and TypeScript. Features dynamic event discovery, full CRUD operations, Cloudinary image management, server-side rendering, and integrated PostHog analytics.",
-    stack: [
-      { name: "Next.js" },
-      { name: "TypeScript" },
-      { name: "Tailwind" },
-      { name: "MongoDB" },
-    ],
-    image: "/assets/work/dev-events.png",
-    live: "https://dev-events-navy-omega.vercel.app/",
-    githubLink: "https://github.com/Kafoor-Nimas/Dev_Events",
-  },
-  {
-    num: "12",
-    category: "frontend",
-    title: "Edusity — College & University Website",
-    description:
-      "A modern, fully responsive College & University website built with React.js and CSS. Features Home, Program, About, Campus, Testimonials, and Contact pages.",
-    stack: [{ name: "React.js" }, { name: "CSS" }],
-    image: "/assets/work/edusity3.png",
-    live: "https://edusity-seven-phi.vercel.app/",
-    githubLink: "https://github.com/Kafoor-Nimas/edusity",
-  },
 ];
+
+// Numbers always follow the order of the list above
+const projects = rawProjects.map((p, i) => ({
+  ...p,
+  num: String(i + 1).padStart(2, "0"),
+}));
 
 const filters = ["all", "fullstack", "frontend"];
 
