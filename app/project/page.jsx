@@ -38,7 +38,7 @@ const projects = [
       { name: "Express.js" },
       { name: "PostgreSQL" },
     ],
-    image: "/assets/work/instacart.png",
+    image: "/assets/work/instacart.jfif",
     live: "https://instacart-client.vercel.app",
     githubLink: "https://github.com/Kafoor-Nimas/Instacart",
   },
@@ -70,7 +70,7 @@ const projects = [
       { name: "MongoDB" },
       { name: "Stripe" },
     ],
-    image: "/assets/work/ecommerce.png",
+    image: "/assets/work/ecommerce.jfif",
     live: "https://ecommerce-frontend-topaz-kappa.vercel.app",
     githubLink: "https://github.com/Kafoor-Nimas/ecommerce-app",
   },
@@ -401,14 +401,14 @@ const Work = () => {
                         </span>
                       </div>
 
-                      <div className="relative w-full aspect-[16/10]">
+                      <div className="relative w-full aspect-video bg-[#1c1c22]">
                         <Image
                           src={p.image}
                           fill
                           alt={p.title}
                           priority={index === 0}
                           sizes="(min-width: 1280px) 50vw, 100vw"
-                          className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                          className="object-contain object-top transition-transform duration-700 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                         {live && (
