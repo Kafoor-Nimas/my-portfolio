@@ -21,7 +21,7 @@ const projects = [
       { name: "Express.js" },
       { name: "MongoDB" },
     ],
-    image: "/assets/work/foodOrder.png",
+    image: "/assets/work/foodOrder.jfif",
     live: "https://online-food-ordering-wheat-mu.vercel.app",
     githubLink:
       "https://github.com/Kafoor-Nimas/Online-Food-Ordering-System.git",
@@ -401,7 +401,7 @@ const Work = () => {
                         </span>
                       </div>
 
-                      <div className="relative h-[240px] sm:h-[340px] xl:h-[400px]">
+                      <div className="relative w-full aspect-[16/10]">
                         <Image
                           src={p.image}
                           fill

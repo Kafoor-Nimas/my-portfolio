@@ -8,11 +8,15 @@ import {
   FaSchool,
   FaLaptopCode,
   FaGraduationCap,
+  FaBriefcase,
+  FaMapMarkerAlt,
 } from "react-icons/fa";
 
 // Pick an icon from the text so each entry feels different
 const getIcon = (item, type) => {
   const text = `${item.title} ${item.subtitle}`.toLowerCase();
+  if (text.includes("intern") || text.includes("apptron"))
+    return <FaBriefcase />;
   if (text.includes("personal projects")) return <FaCode />;
   if (text.includes("university")) return <FaUniversity />;
   if (text.includes("youtube") || text.includes("freecodecamp"))
@@ -96,6 +100,17 @@ export default function TimelineList({ items, type = "experience" }) {
                   <span className="w-[6px] h-[6px] rounded-full bg-accent" />
                   <p className="text-white/60">{item.subtitle}</p>
                 </div>
+                {item.location && (
+                  <p className="flex items-center gap-2 text-sm text-white/40">
+                    <FaMapMarkerAlt className="text-accent/70" />
+                    {item.location}
+                  </p>
+                )}
+                {item.description && (
+                  <p className="text-sm text-white/60 pt-1">
+                    {item.description}
+                  </p>
+                )}
               </div>
             </div>
           </motion.li>

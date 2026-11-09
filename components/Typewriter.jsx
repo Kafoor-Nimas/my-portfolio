@@ -5,8 +5,9 @@ import { useEffect, useState } from "react";
 export default function Typewriter({
   words = [
     "MERN Full-Stack Developer",
+    "Software Engineer Intern @ Apptron",
     "Next.js & TypeScript Builder",
-    "Open to Internships",
+    "Seeking Junior / Associate SE roles",
   ],
 }) {
   const [i, setI] = useState(0);

@@ -18,13 +18,21 @@ const Home = () => {
               <span className="text-accent">Nimas</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
-              I build fast, scalable, user-friendly web applications from
-              frontend to backend with the MERN stack, and I'm now going deeper
-              into Next.js and TypeScript.
+              I'm a full-stack developer and Software Engineer Intern at Apptron
+              Solutions. I build fast, scalable, user-friendly web applications
+              with the MERN stack and Next.js, and I'm looking for an Associate
+              / Junior Software Engineer role.
             </p>
             <div className="flex flex-col xl:flex-row items-center gap-8">
-              <a href="/assets/cv/Nimas_Kafoor_CV.pdf" download="Nimas_Kafoor_CV.pdf">
-                <Button variant="outline" size="lg" className="uppercase flex items-center gap-2">
+              <a
+                href="/assets/cv/Nimas_Kafoor_CV.pdf"
+                download="Nimas_Kafoor_CV.pdf"
+              >
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="uppercase flex items-center gap-2"
+                >
                   <span>Download CV</span>
                   <FiDownload className="text-xl" />
                 </Button>

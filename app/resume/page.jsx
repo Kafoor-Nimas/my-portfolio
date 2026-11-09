@@ -20,7 +20,7 @@ import AboutSection from "@/components/Aboutsection";
 const about = {
   title: "About me",
   description:
-    "I'm a passionate Fullstack Developer and a BICT undergraduate at the University of Kelaniya. I specialize in the MERN stack and I'm currently expanding my skills in Next.js and TypeScript. I'm actively looking for an internship opportunity to grow and contribute.",
+    "I'm a Fullstack Developer and a final-year BICT undergraduate at the University of Kelaniya, currently working as a Software Engineer Intern at Apptron Solutions. I specialize in the MERN stack and Next.js, and I'm looking for an Associate / Junior Software Engineer role where I can keep growing and contribute to real products.",
   info: [
     { fieldName: "Name", fieldValue: "Nimas" },
     { fieldName: "Phone", fieldValue: "(+94) 778945679" },
@@ -28,7 +28,7 @@ const about = {
     { fieldName: "Email", fieldValue: "nimaskafoor@gmail.com" },
     { fieldName: "University", fieldValue: "University of Kelaniya" },
     { fieldName: "Degree", fieldValue: "BICT (Undergraduate)" },
-    
+
     { fieldName: "Languages", fieldValue: "Tamil,Sinhala,English" },
   ],
 };
@@ -37,27 +37,22 @@ const about = {
 const experience = {
   title: "My Experience",
   description:
-    "I'm a fresher actively seeking my first internship. While I don't have formal work experience yet, I have built several personal projects using the MERN stack, Next.js, and TypeScript.",
+    "Hands-on experience building and shipping full-stack web applications with the MERN stack and Next.js.",
   items: [
     {
+      subtitle: "Apptron Solutions",
+      title: "Software Engineer Intern",
+      duration: "Sep 2026 - Present",
+      location: "Remote · Jaffna, Sri Lanka",
+      description:
+        "Developing full-stack features with React, Next.js, Node.js and MongoDB.",
+    },
+    {
       subtitle: "Personal Projects",
-      title: "Fullstack Developer",
+      title: "Full-Stack Developer",
       duration: "2023 - Present",
-    },
-    {
-      subtitle: "Great Stack",
-      title: "Self-taught — MERN Stack",
-      duration: "2025",
-    },
-    {
-      subtitle: "JS Mastery",
-      title: "Self-taught — React & Next.js",
-      duration: "2024",
-    },
-    {
-      subtitle: "freeCodeCamp",
-      title: "Self-taught — Web Development",
-      duration: "2022 - 2024",
+      description:
+        "Built and deployed 12 full-stack applications, including e-commerce, booking and AI-powered platforms, with authentication, payments and admin dashboards.",
     },
   ],
 };

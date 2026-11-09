@@ -14,9 +14,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "Nimas Kafoor | MERN Full-Stack Developer",
+  title: "Nimas Kafoor | Full-Stack Software Engineer",
   description:
-    "Portfolio of Nimas Kafoor, BICT undergraduate at the University of Kelaniya, building full-stack apps with React, Next.js, Node.js and MongoDB.",
+    "Nimas Kafoor, full-stack developer (MERN, Next.js) and BICT undergraduate at the University of Kelaniya, open to Associate / Junior Software Engineer roles.",
 };
 
 export default function RootLayout({ children }) {

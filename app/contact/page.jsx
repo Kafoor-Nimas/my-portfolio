@@ -149,7 +149,7 @@ const Contact = () => {
                     <span className="absolute inset-0 rounded-full bg-accent animate-ping" />
                     <span className="relative w-2 h-2 rounded-full bg-accent" />
                   </span>
-                  Available for internships &amp; freelance
+                  Available for freelance
                 </span>
                 <h3 className="text-4xl xl:text-5xl font-bold text-white">
                   Let's work <span className="text-accent">together</span>

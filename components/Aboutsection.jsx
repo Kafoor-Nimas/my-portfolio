@@ -45,7 +45,7 @@ export default function AboutSection({ about }) {
             <span className="absolute inset-0 rounded-full bg-accent animate-ping" />
             <span className="relative w-2 h-2 rounded-full bg-accent" />
           </span>
-          Open to internships &amp; freelance
+          Open to full-time Software Engineer roles
         </span>
         <h3 className="text-4xl font-bold">{about.title}</h3>
         <p className="[640px] text-white/60 border-l-2 border-accent/60 pl-5 text-left">
