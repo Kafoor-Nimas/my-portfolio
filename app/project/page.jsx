@@ -55,21 +55,21 @@ const rawProjects = [
     live: "https://instacart-client.vercel.app",
     githubLink: "https://github.com/Kafoor-Nimas/Instacart",
   },
-  {
-    category: "fullstack",
-    title: "Servd — AI Recipe Platform",
-    description:
-      "An AI-powered recipe platform with pantry scanning using Google Gemini AI, recipe generation, PDF export, pro tier subscription, Clerk authentication, Arcjet rate limiting, and a Strapi CMS backend.",
-    stack: [
-      { name: "Next.js" },
-      { name: "Strapi" },
-      { name: "PostgreSQL" },
-      { name: "Gemini AI" },
-    ],
-    image: "/assets/work/servd.png",
-    live: "https://ai-recipe-servd.vercel.app",
-    githubLink: "https://github.com/Kafoor-Nimas/AI-Recipe",
-  },
+  // {
+  //   category: "fullstack",
+  //   title: "Servd — AI Recipe Platform",
+  //   description:
+  //     "An AI-powered recipe platform with pantry scanning using Google Gemini AI, recipe generation, PDF export, pro tier subscription, Clerk authentication, Arcjet rate limiting, and a Strapi CMS backend.",
+  //   stack: [
+  //     { name: "Next.js" },
+  //     { name: "Strapi" },
+  //     { name: "PostgreSQL" },
+  //     { name: "Gemini AI" },
+  //   ],
+  //   image: "/assets/work/servd.png",
+  //   live: "https://ai-recipe-servd.vercel.app",
+  //   githubLink: "https://github.com/Kafoor-Nimas/AI-Recipe",
+  // },
   {
     category: "fullstack",
     title: "E-Commerce — Full-Stack Shopping Platform",
@@ -85,21 +85,21 @@ const rawProjects = [
     live: "https://ecommerce-frontend-topaz-kappa.vercel.app",
     githubLink: "https://github.com/Kafoor-Nimas/ecommerce-app",
   },
-  {
-    category: "fullstack",
-    title: "Grocery Delivery App",
-    description:
-      "A full-stack grocery delivery app with JWT auth, real-time cart, Stripe payments, Cloudinary image uploads, order management, and an admin panel — built with the MERN stack.",
-    stack: [
-      { name: "React.js" },
-      { name: "Tailwind" },
-      { name: "Express.js" },
-      { name: "MongoDB" },
-    ],
-    image: "/assets/work/greencart2.jfif",
-    live: "https://grocerydelivery-zeta.vercel.app",
-    githubLink: "https://github.com/Kafoor-Nimas/Grocery-Delivery",
-  },
+  // {
+  //   category: "fullstack",
+  //   title: "Grocery Delivery App",
+  //   description:
+  //     "A full-stack grocery delivery app with JWT auth, real-time cart, Stripe payments, Cloudinary image uploads, order management, and an admin panel — built with the MERN stack.",
+  //   stack: [
+  //     { name: "React.js" },
+  //     { name: "Tailwind" },
+  //     { name: "Express.js" },
+  //     { name: "MongoDB" },
+  //   ],
+  //   image: "/assets/work/greencart2.jfif",
+  //   live: "https://grocerydelivery-zeta.vercel.app",
+  //   githubLink: "https://github.com/Kafoor-Nimas/Grocery-Delivery",
+  // },
   {
     category: "fullstack",
     title: "Nimas Estate — Real Estate Marketplace",
@@ -127,7 +127,7 @@ const rawProjects = [
       { name: "Express" },
     ],
     image: "/assets/work/car-rent.jfif",
-    live: "https://car-rental-psi-one.vercel.app/cars",
+    live: "https://car-rental-psi-one.vercel.app",
     githubLink: "https://github.com/Kafoor-Nimas/CarRental",
   },
   {
