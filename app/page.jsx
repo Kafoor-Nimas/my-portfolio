@@ -45,19 +45,19 @@ const featured = [
     title: "Online Food Ordering System",
     text: "Real-time menu search, JWT authentication, order tracking and a full admin dashboard.",
     stack: ["React", "Node.js", "MongoDB"],
-    image: "/assets/work/foodOrder.jfif",
+    image: "/assets/work/foodOrder.webp",
   },
   {
     title: "Instacart — Grocery Delivery (PERN)",
     text: "Customer ordering, an admin panel and a delivery partner dashboard on PostgreSQL.",
     stack: ["React", "Express", "PostgreSQL"],
-    image: "/assets/work/instacart.jfif",
+    image: "/assets/work/instacart.webp",
   },
   {
     title: "Awwwards — GSAP Animated Website",
     text: "An Awwwards-inspired site with scroll animations, clip-path effects, ScrollTrigger and text reveals.",
     stack: ["React", "GSAP", "Tailwind"],
-    image: "/assets/work/gsap3.jfif",
+    image: "/assets/work/gsap3.webp",
   },
 ];
 
