@@ -108,6 +108,7 @@ const Contact = () => {
       setSuccess(true);
       setFormData(EMPTY);
     } catch (err) {
+      console.error("EmailJS error:", err?.status, err?.text);
       setError("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
