@@ -54,10 +54,10 @@ const featured = [
     image: "/assets/work/instacart.jfif",
   },
   {
-    title: "E-Commerce — Shopping Platform",
-    text: "A production-ready full-stack e-commerce platform with JWT auth, product management, Stripe payments, and order tracking",
-    stack: ["React", "Express", "Stripe"],
-    image: "/assets/work/ecommerce.jfif",
+    title: "Awwwards — GSAP Animated Website",
+    text: "An Awwwards-inspired site with scroll animations, clip-path effects, ScrollTrigger and text reveals.",
+    stack: ["React", "GSAP", "Tailwind"],
+    image: "/assets/work/gsap3.jfif",
   },
 ];
 
