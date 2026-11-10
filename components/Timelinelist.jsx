@@ -34,7 +34,9 @@ const trackMouse = (e) => {
 };
 
 /**
- * items: [{ duration, title, subtitle }]
+ * items: [{ duration, title, subtitle, location?, description?, points?, tags? }]
+ *   points: array of short achievement lines (shown as bullets)
+ *   tags:   array of technology names (shown as pills)
  * type: "experience" | "education"
  */
 export default function TimelineList({ items, type = "experience" }) {
@@ -93,23 +95,54 @@ export default function TimelineList({ items, type = "experience" }) {
                     <span className="text-xs text-white/60">· Current</span>
                   )}
                 </div>
+
                 <h3 className="text-xl font-semibold text-white group-hover:text-accent transition-colors duration-500">
                   {item.title}
                 </h3>
+
                 <div className="flex items-center gap-3">
                   <span className="w-[6px] h-[6px] rounded-full bg-accent" />
                   <p className="text-white/60">{item.subtitle}</p>
                 </div>
+
                 {item.location && (
                   <p className="flex items-center gap-2 text-sm text-white/40">
                     <FaMapMarkerAlt className="text-accent/70" />
                     {item.location}
                   </p>
                 )}
+
                 {item.description && (
                   <p className="text-sm text-white/60 pt-1">
                     {item.description}
                   </p>
+                )}
+
+                {item.points?.length > 0 && (
+                  <ul className="flex flex-col gap-1.5 pt-1">
+                    {item.points.map((pt, i) => (
+                      <li
+                        key={i}
+                        className="flex gap-2 text-sm text-white/60"
+                      >
+                        <span className="mt-[7px] h-[5px] w-[5px] shrink-0 rounded-full bg-accent" />
+                        {pt}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {item.tags?.length > 0 && (
+                  <ul className="flex flex-wrap gap-2 pt-2">
+                    {item.tags.map((t) => (
+                      <li
+                        key={t}
+                        className="px-2.5 py-0.5 rounded-full text-xs text-accent border border-accent/30 bg-accent/5"
+                      >
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
                 )}
               </div>
             </div>
