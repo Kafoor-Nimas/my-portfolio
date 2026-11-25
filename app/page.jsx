@@ -64,7 +64,7 @@ const featured = [
 // Hero text: children rise in one after another (after the stair transition)
 const heroContainer = {
   hidden: {},
-  show: { transition: { delayChildren: 2.2, staggerChildren: 0.12 } },
+  show: { transition: { delayChildren: 0.1, staggerChildren: 0.12 } },
 };
 const rise = {
   hidden: { opacity: 0, y: 30 },

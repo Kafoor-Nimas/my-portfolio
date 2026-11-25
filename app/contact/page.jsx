@@ -66,7 +66,7 @@ const trackMouse = (e) => {
 
 const container = {
   hidden: {},
-  show: { transition: { delayChildren: 2.4, staggerChildren: 0.15 } },
+  show: { transition: { delayChildren: 0.1, staggerChildren: 0.15 } },
 };
 const item = {
   hidden: { opacity: 0, y: 40 },

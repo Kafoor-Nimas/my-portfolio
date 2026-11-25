@@ -52,7 +52,7 @@ const steps = [
 
 const container = {
   hidden: {},
-  show: { transition: { delayChildren: 2.4, staggerChildren: 0.15 } },
+  show: { transition: { delayChildren: 0.1, staggerChildren: 0.15 } },
 };
 const item = {
   hidden: { opacity: 0, y: 40 },
@@ -81,7 +81,7 @@ const Services = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2.2, duration: 0.7, ease: "easeOut" }}
+          transition={{ delay: 0.1, duration: 0.7, ease: "easeOut" }}
           className="text-center xl:text-left mb-12 xl:mb-16"
         >
           <span className="inline-block mb-3 text-sm uppercase tracking-widest text-accent">

@@ -186,7 +186,7 @@ const Work = () => {
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+        transition: { delay: 0.1, duration: 0.4, ease: "easeIn" },
       }}
       className="py-12 overflow-clip"
     >
@@ -265,7 +265,7 @@ const Work = () => {
                   transition={{
                     duration: 0.7,
                     ease: "easeOut",
-                    delay: first ? 2.4 : 0.1,
+                    delay: first ? 0.1 : 0.1,
                   }}
                   className={`flex flex-col gap-6 order-2 ${
                     flip ? "xl:order-2" : "xl:order-1"
@@ -335,7 +335,7 @@ const Work = () => {
                   transition={{
                     duration: 0.8,
                     ease: "easeOut",
-                    delay: first ? 2.5 : 0.15,
+                    delay: first ? 0.1 : 0.15,
                   }}
                   className={`order-1 ${flip ? "xl:order-1" : "xl:order-2"}`}
                 >

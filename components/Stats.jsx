@@ -34,7 +34,7 @@ const Stats = () => {
                 <CountUp
                   end={item.num}
                   duration={5}
-                  delay={2}
+                  delay={0.3}
                   className="text-4xl xl:text-6xl font-extrabold"
                 />
                 <p

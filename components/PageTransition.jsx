@@ -1,26 +1,22 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
+// Quick, subtle fade when the route changes.
+// No exit animation and no blank cover, so the page is never empty.
 const PageTransition = ({ children }) => {
   const pathname = usePathname();
-  return (
-    <AnimatePresence>
-      <div key={pathname}>
-        <motion.div
-          initial={{ opacity: 1 }}
-          animate={{
-            opacity: 0,
-            transition: { delay: 1, duration: 0.4, ease: "easeInOut" },
-          }}
-          className="h-screen w-screen bg-primary fixed top-0
-          pointer-events-none"
-        />
 
-        {children}
-      </div>
-    </AnimatePresence>
+  return (
+    <motion.div
+      key={pathname}
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
+    >
+      {children}
+    </motion.div>
   );
 };
 

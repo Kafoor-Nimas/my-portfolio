@@ -3,7 +3,7 @@ import "./globals.css";
 
 import PageTransition from "@/components/PageTransition";
 import Header from "@/components/Header";
-import StairTransition from "@/components/StairTransition";
+// import StairTransition from "@/components/StairTransition";
 import ParticleBackground from "@/components/Particlebackground";
 import CursorGlow from "@/components/Cursorglow";
 
@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
         <ParticleBackground />
         <CursorGlow />
         <Header />
-        <StairTransition />
+        {/* <StairTransition /> */}
         <PageTransition>{children}</PageTransition>
       </body>
     </html>

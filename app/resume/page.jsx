@@ -190,7 +190,7 @@ const Resume = () => {
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+        transition: { delay: 0.1, duration: 0.4, ease: "easeIn" },
       }}
       className="min-h-[80vh] flex items-center justify-center py-12 xl:py-16"
     >
@@ -205,7 +205,7 @@ const Resume = () => {
             animate={{
               opacity: 1,
               x: 0,
-              transition: { delay: 2.6, duration: 0.5 },
+              transition: { delay: 0.1, duration: 0.5 },
             }}
             className="w-full max-w-[380px] mx-auto xl:mx-0 flex flex-col gap-8"
           >
