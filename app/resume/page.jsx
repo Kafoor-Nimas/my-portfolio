@@ -30,6 +30,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
+import ActionButton from "@/components/ActionButton";
 
 // About data
 const about = {
@@ -220,19 +221,16 @@ const Resume = () => {
               ))}
             </TabsList>
 
-            <a
+            <ActionButton
               href="/assets/cv/Nimas_Kafoor_CV.pdf"
               download="Nimas_Kafoor_CV.pdf"
-              className="w-full"
+              size="lg"
+              wrapperClassName="w-full"
+              className="w-full justify-center"
+              icon={<FiDownload className="text-xl" />}
             >
-              <Button
-                size="lg"
-                className="w-full uppercase flex items-center justify-center gap-2"
-              >
-                <span>Download CV</span>
-                <FiDownload className="text-xl" />
-              </Button>
-            </a>
+              Download CV
+            </ActionButton>
           </motion.div>
 
           <div className="min-h-[70vh] w-full">

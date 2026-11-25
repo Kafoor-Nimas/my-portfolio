@@ -20,25 +20,9 @@ import {
 import Socials from "@/components/Socials";
 import Stats from "@/components/Stats";
 import Typewriter from "@/components/Typewriter";
-import TiltCard from "@/components/Tiltcard"; // match your file's exact casing
+import TiltCard from "@/components/Tiltcard";
 import HeroSceneClient from "@/components/three/HeroSceneClient";
-import { Button } from "@/components/ui/button";
-
-const tech = [
-  { icon: <FaReact />, name: "React" },
-  { icon: <SiNextdotjs />, name: "Next.js" },
-  { icon: <SiTypescript />, name: "TypeScript" },
-  { icon: <FaNodeJs />, name: "Node.js" },
-  { icon: <SiExpress />, name: "Express" },
-  { icon: <SiMongodb />, name: "MongoDB" },
-  { icon: <SiMongoose />, name: "Mongoose" },
-  { icon: <SiPostgresql />, name: "PostgreSQL" },
-  { icon: <SiTailwindcss />, name: "Tailwind" },
-  { icon: <FaJs />, name: "JavaScript" },
-  { icon: <FaHtml5 />, name: "HTML5" },
-  { icon: <FaCss3 />, name: "CSS3" },
-  { icon: <SiGithub />, name: "GitHub" },
-];
+import ActionButton from "@/components/ActionButton";
 
 const featured = [
   {
@@ -61,7 +45,6 @@ const featured = [
   },
 ];
 
-// Hero text: children rise in one after another (after the stair transition)
 const heroContainer = {
   hidden: {},
   show: { transition: { delayChildren: 0.1, staggerChildren: 0.12 } },
@@ -131,28 +114,22 @@ const Home = () => {
               className="flex flex-col xl:flex-row items-center gap-6 xl:gap-8"
             >
               <div className="flex flex-wrap justify-center gap-4">
-                <Link href="/project">
-                  <Button
-                    size="lg"
-                    className="uppercase flex items-center gap-2"
-                  >
-                    <span>View my work</span>
-                    <BsArrowUpRight className="text-xl" />
-                  </Button>
-                </Link>
-                <a
+                <ActionButton
+                  href="/project"
+                  size="lg"
+                  icon={<BsArrowUpRight className="text-xl" />}
+                >
+                  View my work
+                </ActionButton>
+                <ActionButton
                   href="/assets/cv/Nimas_Kafoor_CV.pdf"
                   download="Nimas_Kafoor_CV.pdf"
+                  variant="outline"
+                  size="lg"
+                  icon={<FiDownload className="text-xl" />}
                 >
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="uppercase flex items-center gap-2"
-                  >
-                    <span>Download CV</span>
-                    <FiDownload className="text-xl" />
-                  </Button>
-                </a>
+                  Download CV
+                </ActionButton>
               </div>
               <div className="mb-8 xl:mb-0">
                 <Socials
@@ -171,43 +148,6 @@ const Home = () => {
 
       {/* ================= STATS ================= */}
       <Stats />
-
-      {/* ================= TECH MARQUEE ================= */}
-      <motion.div {...reveal} className="mt-16 xl:mt-24">
-        <div className="container mx-auto text-center xl:text-left mb-8">
-          <SectionLabel>Tech stack</SectionLabel>
-          <h2 className="text-3xl xl:text-4xl font-bold">Tools I build with</h2>
-        </div>
-        <div
-          className="overflow-hidden py-4"
-          style={{
-            maskImage:
-              "linear-gradient(to right, transparent, black 12%, black 88%, transparent)",
-            WebkitMaskImage:
-              "linear-gradient(to right, transparent, black 12%, black 88%, transparent)",
-          }}
-        >
-          <motion.div
-            className="flex gap-6 w-max"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ duration: 35, ease: "linear", repeat: Infinity }}
-          >
-            {[...tech, ...tech].map((t, i) => (
-              <div
-                key={i}
-                className="group flex items-center gap-3 px-6 py-4 rounded-xl border border-white/10 bg-[#27272c]/70 hover:border-accent/50 transition-colors duration-300"
-              >
-                <span className="text-3xl text-white/70 group-hover:text-accent transition-colors duration-300">
-                  {t.icon}
-                </span>
-                <span className="text-white/70 whitespace-nowrap">
-                  {t.name}
-                </span>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </motion.div>
 
       {/* ================= FEATURED WORK ================= */}
       <div className="container mx-auto mt-20 xl:mt-28">
@@ -287,12 +227,14 @@ const Home = () => {
             I'm looking for an Associate / Junior Software Engineer role where I
             can contribute to real products. If you're hiring, I'd love to talk.
           </p>
-          <Link href="/contact" className="relative inline-block">
-            <Button size="lg" className="uppercase flex items-center gap-2">
-              <span>Get in touch</span>
-              <BsArrowUpRight className="text-xl" />
-            </Button>
-          </Link>
+          <ActionButton
+            href="/contact"
+            size="lg"
+            wrapperClassName="relative inline-block"
+            icon={<BsArrowUpRight className="text-xl" />}
+          >
+            Get in touch
+          </ActionButton>
         </motion.div>
       </div>
     </section>

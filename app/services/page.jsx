@@ -5,7 +5,7 @@ import Link from "next/link";
 import { BsArrowUpRight } from "react-icons/bs";
 import { FaLayerGroup, FaDesktop, FaServer, FaDatabase } from "react-icons/fa";
 import TiltCard from "@/components/Tiltcard";
-import { Button } from "@/components/ui/button";
+import ActionButton from "@/components/ActionButton";
 
 const services = [
   {
@@ -44,9 +44,18 @@ const services = [
 
 // Edit these to match how you really work
 const steps = [
-  { title: "Plan", text: "Understand the requirements, define the scope and model the data." },
-  { title: "Design", text: "Sketch the flows and build a clean, responsive interface." },
-  { title: "Build", text: "Develop the frontend, REST APIs and database layer." },
+  {
+    title: "Plan",
+    text: "Understand the requirements, define the scope and model the data.",
+  },
+  {
+    title: "Design",
+    text: "Sketch the flows and build a clean, responsive interface.",
+  },
+  {
+    title: "Build",
+    text: "Develop the frontend, REST APIs and database layer.",
+  },
   { title: "Ship", text: "Test, deploy and keep improving from feedback." },
 ];
 
@@ -121,7 +130,11 @@ const Services = () => {
                     <motion.span
                       aria-hidden="true"
                       animate={{ rotate: 360 }}
-                      transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                      transition={{
+                        duration: 4,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
                       style={{
                         x: "-50%",
                         y: "-50%",
@@ -249,12 +262,14 @@ const Services = () => {
           <p className="relative max-w-[520px] mx-auto text-white/60 mb-8">
             Tell me what you want to build and let's talk about how I can help.
           </p>
-          <Link href="/contact" className="relative inline-block">
-            <Button size="lg" className="uppercase flex items-center gap-2">
-              <span>Start a conversation</span>
-              <BsArrowUpRight className="text-xl" />
-            </Button>
-          </Link>
+          <ActionButton
+            href="/contact"
+            size="lg"
+            wrapperClassName="relative inline-block"
+            icon={<BsArrowUpRight className="text-xl" />}
+          >
+            Start a conversation
+          </ActionButton>
         </motion.div>
       </div>
     </section>

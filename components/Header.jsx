@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Nav from "./Nav";
 
-import { Button } from "./ui/button";
+
 import MobileNav from "./MobileNav";
+import ActionButton from "./ActionButton";
 
 const Header = () => {
   return (
@@ -15,11 +16,9 @@ const Header = () => {
           </h1>
         </Link>
         {/* Desktop nav */}
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8 ">
           <Nav />
-          <Link href={"/contact"}>
-            <Button>Hire me</Button>
-          </Link>
+          <ActionButton href="/contact">Hire me</ActionButton>
         </div>
         {/* Mobile nav */}
         <div className="lg:hidden">

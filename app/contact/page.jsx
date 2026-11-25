@@ -3,7 +3,6 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion, AnimatePresence } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -23,6 +22,7 @@ import {
   FaPaperPlane,
 } from "react-icons/fa";
 import Socials from "@/components/Socials";
+import ActionButton from "@/components/ActionButton";
 
 const ADDRESS = "129/5 Manikkampitiya, Kaduruwela, Polonnaruwa";
 
@@ -258,20 +258,16 @@ const Contact = () => {
                 )}
               </AnimatePresence>
 
-              <Button
+              <ActionButton
                 type="submit"
                 size="md"
-                className="relative max-w-48 flex items-center gap-2"
+                uppercase={false}
                 disabled={loading}
+                className="relative max-w-48"
+                icon={!loading && <FaPaperPlane className="text-sm" />}
               >
-                {loading ? (
-                  "Sending..."
-                ) : (
-                  <>
-                    Send message <FaPaperPlane className="text-sm" />
-                  </>
-                )}
-              </Button>
+                {loading ? "Sending..." : "Send message"}
+              </ActionButton>
             </form>
           </motion.div>
 
