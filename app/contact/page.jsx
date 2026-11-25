@@ -306,10 +306,7 @@ const Contact = () => {
 
             <motion.div variants={item} className="pt-2">
               <p className="text-white/50 text-sm mb-4">Find me online</p>
-              <Socials
-                containerStyles="flex gap-6"
-                iconStyles="w-9 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary transition-all duration-500"
-              />
+              <Socials containerStyles="flex gap-6" />
             </motion.div>
           </div>
         </motion.div>
