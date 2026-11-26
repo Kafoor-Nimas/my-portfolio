@@ -172,6 +172,7 @@ const Home = () => {
               key={p.title}
               {...reveal}
               transition={{ ...reveal.transition, delay: i * 0.12 }}
+              className={i >= 2 ? "hidden xl:block" : ""}
             >
               <TiltCard max={6} className="h-full">
                 <Link

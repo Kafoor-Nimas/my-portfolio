@@ -70,21 +70,21 @@ const rawProjects = [
   //   live: "https://ai-recipe-servd.vercel.app",
   //   githubLink: "https://github.com/Kafoor-Nimas/AI-Recipe",
   // },
-  {
-    category: "fullstack",
-    title: "E-Commerce — Full-Stack Shopping Platform",
-    description:
-      "A production-ready full-stack e-commerce platform with JWT auth, product management, cart, Stripe & COD payments, order tracking, and a dedicated admin panel for managing products and orders.",
-    stack: [
-      { name: "React.js" },
-      { name: "Node.js" },
-      { name: "MongoDB" },
-      { name: "Stripe" },
-    ],
-    image: "/assets/work/ecommerce.webp",
-    live: "https://ecommerce-frontend-topaz-kappa.vercel.app",
-    githubLink: "https://github.com/Kafoor-Nimas/ecommerce-app",
-  },
+  // {
+  //   category: "fullstack",
+  //   title: "E-Commerce — Full-Stack Shopping Platform",
+  //   description:
+  //     "A production-ready full-stack e-commerce platform with JWT auth, product management, cart, Stripe & COD payments, order tracking, and a dedicated admin panel for managing products and orders.",
+  //   stack: [
+  //     { name: "React.js" },
+  //     { name: "Node.js" },
+  //     { name: "MongoDB" },
+  //     { name: "Stripe" },
+  //   ],
+  //   image: "/assets/work/ecommerce.webp",
+  //   live: "https://ecommerce-frontend-topaz-kappa.vercel.app",
+  //   githubLink: "https://github.com/Kafoor-Nimas/ecommerce-app",
+  // },
   // {
   //   category: "fullstack",
   //   title: "Grocery Delivery App",
@@ -100,21 +100,21 @@ const rawProjects = [
   //   live: "https://grocerydelivery-zeta.vercel.app",
   //   githubLink: "https://github.com/Kafoor-Nimas/Grocery-Delivery",
   // },
-  {
-    category: "fullstack",
-    title: "Nimas Estate — Real Estate Marketplace",
-    description:
-      "A full-stack real estate marketplace where users can list, browse, and manage properties for sale or rent. Features JWT auth, Google OAuth via Firebase, Redux Toolkit state management, Cloudinary image uploads, and advanced search & filter.",
-    stack: [
-      { name: "React.js" },
-      { name: "Tailwind" },
-      { name: "Express.js" },
-      { name: "MongoDB" },
-    ],
-    image: "/assets/work/nimas-estate2.webp",
-    live: "https://github.com/Kafoor-Nimas/mern-estate", // TODO: replace with the deployed URL
-    githubLink: "https://github.com/Kafoor-Nimas/mern-estate",
-  },
+  // {
+  //   category: "fullstack",
+  //   title: "Nimas Estate — Real Estate Marketplace",
+  //   description:
+  //     "A full-stack real estate marketplace where users can list, browse, and manage properties for sale or rent. Features JWT auth, Google OAuth via Firebase, Redux Toolkit state management, Cloudinary image uploads, and advanced search & filter.",
+  //   stack: [
+  //     { name: "React.js" },
+  //     { name: "Tailwind" },
+  //     { name: "Express.js" },
+  //     { name: "MongoDB" },
+  //   ],
+  //   image: "/assets/work/nimas-estate2.webp",
+  //   live: "https://github.com/Kafoor-Nimas/mern-estate", // TODO: replace with the deployed URL
+  //   githubLink: "https://github.com/Kafoor-Nimas/mern-estate",
+  // },
   {
     category: "fullstack",
     title: "Car Rental — Vehicle Booking Platform",
